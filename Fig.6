@@ -1,0 +1,243 @@
+clear;clc;
+clear all
+clf;
+subplot(2,3,1)
+y2=500:0.1:505; r=3;T=500;
+d21=((505-y2)./(505-T)).^r;
+plot(y2,d21,'b')
+hold on
+y2=500:0.1:505;  % 维度不一致，515 拆成505：515；
+d22=((515-y2)./(515-T)).^r;
+plot(y2,d22,'m')
+hold on
+fill ([y2,fliplr(y2)],[d21,fliplr(d22)],'c')
+hold on
+y0=505:0.1:515;  % 维度不一致，515 拆成505：515；
+d02=((515-y0)./(515-T)).^r;
+d01=((y0-y0)./(515-T)).^r;% d01=0;
+plot(y0, d02,'m')
+hold on
+plot(y0, d01,'b')
+hold on
+fill ([y0,fliplr(y0)],[d01,fliplr(d02)],'c')
+hold on
+% 添加辅助线；
+y=499:0.1:516;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=499:0.1:500;
+m2=0*y+1;
+plot(y,m2,'k')
+y=515:0.1:516;
+m3=0*y+0;
+plot(y,m3,'k')
+hold on
+line([500 500],[0 1]);
+hold on
+line([505 505],[0 1]);
+hold on
+line([515 515],[0 1]);
+hold on
+
+subplot(2,3,2)
+y2=500:0.1:505; r=1;
+d21=((505-y2)./(505-T)).^r;
+plot(y2,d21,'b')
+hold on
+y2=500:0.1:505;  % 维度不一致，515 拆成505：515；
+d22=((515-y2)./(515-T)).^r;
+plot(y2,d22,'m')
+hold on
+fill ([y2,fliplr(y2)],[d21,fliplr(d22)],'c')
+hold on
+y0=505:0.1:515;  % 维度不一致，515 拆成505：515；
+d02=((515-y0)./(515-T)).^r;
+d01=((y0-y0)./(515-T)).^r;% d01=0;
+plot(y0, d02,'m')
+hold on
+plot(y0, d01,'b')
+hold on
+fill ([y0,fliplr(y0)],[d01,fliplr(d02)],'c')
+hold on
+% 添加辅助线；
+y=499:0.1:516;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=499:0.1:500;
+m2=0*y+1;
+plot(y,m2,'k')
+y=515:0.1:516;
+m3=0*y+0;
+plot(y,m3,'k')
+hold on
+line([500 500],[0 1]);
+hold on
+line([505 505],[0 1]);
+hold on
+line([515 515],[0 1]);
+hold on
+
+subplot(2,3,3)
+y2=500:0.1:505; r=0.5;
+d21=((505-y2)./(505-T)).^r;
+plot(y2,d21,'b')
+hold on
+y2=500:0.1:505;  % 维度不一致，515 拆成505：515；
+d22=((515-y2)./(515-T)).^r;
+plot(y2,d22,'m')
+hold on
+fill ([y2,fliplr(y2)],[d21,fliplr(d22)],'c')
+hold on
+y0=505:0.1:515;  % 维度不一致，515 拆成505：515；
+d02=((515-y0)./(515-T)).^r;
+d01=((y0-y0)./(515-T)).^r;% d01=0;
+plot(y0, d02,'m')
+hold on
+plot(y0, d01,'b')
+hold on
+fill ([y0,fliplr(y0)],[d01,fliplr(d02)],'c')
+hold on
+
+% 添加辅助线；
+y=499:0.1:516;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=499:0.1:500;
+m2=0*y+1;
+plot(y,m2,'k')
+y=515:0.1:516;
+m3=0*y+0;
+plot(y,m3,'k')
+hold on
+line([500 500],[0 1]);
+hold on
+line([505 505],[0 1]);
+hold on
+line([515 515],[0 1]);
+hold on
+
+subplot(2,3,4)
+y12=495:0.1:505; r=3;
+d11=((510-y12)./(510-495)).^r;
+plot(y12,d11,'c')
+hold on
+d31=exp(0.*y12); % d31=1;
+plot(y12,d31,'b')
+hold on
+fill ([y12,fliplr(y12)],[d11,fliplr(d31)],'c')
+hold on
+
+y14=505:0.1:510;
+d11=((510-y14)./(510-495)).^r;
+plot(y14,d11,'c')
+hold on
+d31=((510-y14)./(510-505)).^r;
+plot(y14,d31,'b')
+hold on
+fill ([y14,fliplr(y14)],[d11,fliplr(d31)],'c')
+hold on
+% 添加辅助线；
+y=494:0.1:511;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=494:0.1:495;
+m2=0*y+1;
+plot(y,m2,'k')
+y=510:0.1:511;
+m3=0*y+0;
+plot(y,m3,'k')
+hold on
+line([495 495],[0 1]);
+hold on
+line([500 500],[0 1]);
+hold on
+line([505 505],[0 1]);
+hold on
+line([510 510],[0 1]);
+hold on
+
+subplot(2,3,5)
+y12=495:0.1:505; r=1;
+d11=((510-y12)./(510-495)).^r;
+plot(y12,d11,'c')
+hold on
+d31=exp(0.*y12); % d31=1;
+plot(y12,d31,'b')
+hold on
+fill ([y12,fliplr(y12)],[d11,fliplr(d31)],'c')
+hold on
+
+y14=505:0.1:510;
+d11=((510-y14)./(510-495)).^r;
+plot(y14,d11,'c')
+hold on
+d31=((510-y14)./(510-505)).^r;
+plot(y14,d31,'b')
+hold on
+fill ([y14,fliplr(y14)],[d11,fliplr(d31)],'c')
+hold on
+% 添加辅助线；
+y=494:0.1:511;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=494:0.1:495;
+m2=0*y+1;
+plot(y,m2,'k')
+y=510:0.1:511;
+m3=0*y+0;
+plot(y,m3,'k')
+hold on
+line([495 495],[0 1]);
+hold on
+line([500 500],[0 1]);
+hold on
+line([505 505],[0 1]);
+hold on
+line([510 510],[0 1]);
+hold on
+
+subplot(2,3,6)
+y12=495:0.1:505; r=0.5;
+d11=((510-y12)./(510-495)).^r;
+plot(y12,d11,'c')
+hold on
+d31=exp(0.*y12); % d31=1;
+plot(y12,d31,'b')
+hold on
+fill ([y12,fliplr(y12)],[d11,fliplr(d31)],'c')
+hold on
+
+y14=505:0.1:510;
+d11=((510-y14)./(510-495)).^r;
+plot(y14,d11,'c')
+hold on
+d31=((510-y14)./(510-505)).^r;
+plot(y14,d31,'b')
+hold on
+fill ([y14,fliplr(y14)],[d11,fliplr(d31)],'c')
+hold on
+% 添加辅助线；
+y=494:0.1:511;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=494:0.1:495;
+m2=0*y+1;
+plot(y,m2,'k')
+y=510:0.1:511;
+m3=0*y+0;
+plot(y,m3,'k')
+hold on
+line([495 495],[0 1]);
+hold on
+line([500 500],[0 1]);
+hold on
+line([505 505],[0 1]);
+hold on
+line([510 510],[0 1]);
+hold on
