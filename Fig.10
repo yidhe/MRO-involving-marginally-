@@ -1,0 +1,128 @@
+clear;clc;
+clear all
+clf;
+
+subplot(1,3,1)
+% m;
+% m;
+r=5; l=5; 
+y1=490:0.2:495; 
+d11=((y1-490)./(505-490)).^l;
+plot(y1,d11,'b')
+hold on
+y2=495:0.2:500;
+d12=((y2-490)./(505-490)).^l;
+plot(y2,d12,'b')
+hold on
+y3=500:0.2:505;
+d13=((510-y3)./(510-495)).^r;
+plot(y3,d13,'b')
+hold on
+y4=505:0.2:510;
+d14=((510-y4)./(510-495)).^r;
+plot(y4,d14,'b')
+hold on
+% 添加辅助线；
+y=489:0.2:490;
+m1=0*y;
+plot(y,m1,'k--')
+hold on
+y=510:0.2:511;
+m2=0*y;
+plot(y,m2,'k--')
+y=489:0.2:511;
+m3=0*y+1;
+plot(y,m3,'k--')
+line([490 490],[0 1],'Color','black','Linestyle','--');
+hold on
+line([495 495],[0 1],'Color','black','Linestyle','--');
+hold on
+line([500 500],[0 1],'Color','black','Linestyle','--');
+hold on
+line([505 505],[0 1],'Color','black','Linestyle','--');
+hold on
+line([510 510],[0 1],'Color','black','Linestyle','--');
+hold on
+
+subplot(1,3,2)
+% v;
+y1=490:0.2:495; 
+d21=((y1-490)./(495-490)).^l;
+plot(y1,1-d21,'b--d')
+hold on
+y2=495:0.2:500;
+d22=y2*0+1;
+plot(y2,1-d22,'b--d')
+hold on
+y3=500:0.2:505;
+d23=y3*0+1;
+plot(y3,1-d23,'b--d')
+hold on
+y4=505:0.2:510;
+d24=((510-y4)./(510-505)).^r;
+plot(y4,1-d24,'b--d')
+hold on
+
+% 添加辅助线；
+y=489:0.2:511;
+m2=0*y+1;
+plot(y,m2,'k--')
+y=489:0.2:490;
+m3=0*y+1;
+plot(y,m3,'k--d')
+hold on
+y=510:0.2:511;
+m4=0*y+1;
+plot(y,m4,'k--d')
+line([490 490],[0 1],'Color','black','Linestyle','--');
+hold on
+line([495 495],[0 1],'Color','black','Linestyle','--');
+hold on
+line([500 500],[0 1],'Color','black','Linestyle','--');
+hold on
+line([505 505],[0 1],'Color','black','Linestyle','--');
+hold on
+line([510 510],[0 1],'Color','black','Linestyle','--');
+hold on
+
+subplot(1,3,3)
+% pai;
+y1=490:0.2:495; 
+d21=((y1-490)./(495-490)).^l;
+plot(y1,d21-d11,'b--^')
+hold on
+y2=495:0.2:500;
+d22=y2*0+1;
+plot(y2,d22-d12,'b--^')
+hold on
+y3=500:0.2:505;
+d23=y3*0+1;
+plot(y3,d23-d13,'b--^')
+hold on
+y4=505:0.2:510;
+d24=((510-y4)./(510-505)).^r;
+plot(y4,d24-d14,'b--^')
+hold on
+
+
+% 添加辅助线；
+y=489:0.2:490;
+m1=0*y;
+plot(y,m1,'k--^')
+hold on
+y=510:0.2:511;
+m2=0*y;
+plot(y,m2,'k--^')
+y=489:0.2:511;
+m3=0*y+1;
+plot(y,m3,'k--')
+line([490 490],[0 1],'Color','black','Linestyle','--');
+hold on
+line([495 495],[0 1],'Color','black','Linestyle','--');
+hold on
+line([500 500],[0 1],'Color','black','Linestyle','--');
+hold on
+line([505 505],[0 1],'Color','black','Linestyle','--');
+hold on
+line([510 510],[0 1],'Color','black','Linestyle','--');
+hold on
