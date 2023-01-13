@@ -1,0 +1,164 @@
+clear;clc;
+clear all
+clf;
+subplot(3,2,1)
+% m;
+T=500; r=1; l=1; 
+y1=485:0.2:495;
+d11=0*y1;
+plot(y1,d11,'b')
+hold on
+y1=495:0.2:500;
+d12=((y1-495)./(T-495)).^l;
+plot(y1,d12,'b')
+hold on
+y1=500:0.2:510;
+d13=((510-y1)./(510-500)).^r;
+plot(y1,d13,'b')
+hold on
+
+% m+v;
+y1=485:0.2:495;
+d21=((y1-485)./(T-485)).^l;
+plot(y1,d11+1-d21,'b')
+hold on
+y1=495:0.2:500;
+d22=((y1-485)./(T-485)).^l;
+plot(y1,d12+1-d22,'b')
+hold on
+y1=500:0.2:510;
+plot(y1,d13+1-d13,'b^')
+hold on
+
+% m+v+pai;
+y1=484:0.2:511;
+d3=y1*0+1;
+plot(y1,d3,'b')
+hold on
+
+% 添加辅助线；
+y=484:0.2:485;
+m1=0*y;
+plot(y,m1,'k--')
+hold on
+y=510:0.2:511;
+m2=0*y;
+plot(y,m2,'k--')
+y=484:0.2:485;
+m3=0*y+1;
+plot(y,m3,'k--')
+hold on
+y=510:0.2:511;
+m4=0*y+1;
+plot(y,m4,'k--')
+line([485 485],[0 1],'Color','black','Linestyle','--');
+hold on
+line([495 495],[0 1],'Color','black','Linestyle','--');
+hold on
+line([500 500],[0 1],'Color','black','Linestyle','--');
+hold on
+line([510 510],[0 1],'Color','black','Linestyle','--');
+hold on
+
+
+subplot(3,2,2)
+% m;
+T=500; r=1; l=1; 
+y1=485:0.2:495;
+d11=0*y1;
+plot(y1,d11,'b')
+hold on
+y1=495:0.2:500;
+d12=((y1-495)./(T-495)).^l;
+plot(y1,d12,'b')
+hold on
+y1=500:0.2:510;
+d13=((510-y1)./(510-500)).^r;
+plot(y1,d13,'b')
+hold on
+% 添加辅助线；
+y=484:0.2:485;
+m1=0*y;
+plot(y,m1,'k')
+hold on
+y=510:0.2:511;
+m2=0*y;
+plot(y,m2,'k')
+y=484:0.2:511;
+m3=0*y+1;
+plot(y,m3,'k--')
+line([485 485],[0 1],'Color','black','Linestyle','--');
+hold on
+line([495 495],[0 1],'Color','black','Linestyle','--');
+hold on
+line([500 500],[0 1],'Color','black','Linestyle','--');
+hold on
+line([510 510],[0 1],'Color','black','Linestyle','--');
+hold on
+
+subplot(3,2,4)
+% v;
+y1=485:0.2:495;
+d21=((y1-485)./(T-485)).^l;
+plot(y1,1-d21,'b')
+hold on
+y1=495:0.2:500;
+d22=((y1-485)./(T-485)).^l;
+plot(y1,1-d22,'b')
+hold on
+y1=500:0.2:510;
+plot(y1,1-d13,'b')
+hold on
+
+% 添加辅助线；
+y=484:0.2:511;
+m2=0*y+1;
+plot(y,m2,'k--')
+y=484:0.2:485;
+m3=0*y+1;
+plot(y,m3,'k')
+hold on
+y=510:0.2:511;
+m4=0*y+1;
+plot(y,m4,'k')
+line([485 485],[0 1],'Color','black','Linestyle','--');
+hold on
+line([495 495],[0 1],'Color','black','Linestyle','--');
+hold on
+line([500 500],[0 1],'Color','black','Linestyle','--');
+hold on
+line([510 510],[0 1],'Color','black','Linestyle','--');
+hold on
+
+subplot(3,2,6)
+% pai;
+y1=485:0.2:495;
+plot(y1,d21-d11,'b')
+hold on
+y1=495:0.2:500;
+d22=((y1-485)./(T-485)).^l;
+plot(y1,d22-d12,'b')
+hold on
+y1=500:0.2:510;
+plot(y1,d13-d13,'b')
+hold on
+
+% 添加辅助线；
+y=484:0.2:511;
+m2=0*y+1;
+plot(y,m2,'k--')
+y=484:0.2:485;
+m3=0*y;
+plot(y,m3,'k')
+hold on
+y=510:0.2:511;
+m4=0*y;
+plot(y,m4,'k')
+line([485 485],[0 1],'Color','black','Linestyle','--');
+hold on
+line([495 495],[0 1],'Color','black','Linestyle','--');
+hold on
+line([500 500],[0 1],'Color','black','Linestyle','--');
+hold on
+line([510 510],[0 1],'Color','black','Linestyle','--');
+hold on
