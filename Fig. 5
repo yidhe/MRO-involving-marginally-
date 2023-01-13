@@ -1,123 +1,251 @@
 clear;clc;
 clear all
 clf;
-subplot(3,1,1)
-y11=490:0.1:500; r1=2; l1=2; r2=10; l2=10; T=500;
-d11=((y11-490)./(500-490)).^l1;
-plot(y11,d11,'c')
+subplot(2,3,1)
+y1=495:0.1:500;
+T=500;  l=2; 
+d11=((y1-495)./(T-495)).^l;
+plot(y1,d11,'b')
 hold on
-d21=((y11-490)./(500-490)).^l2;
-plot(y11,d21,'b')
+y1=495:0.1:500;  % 维度不一致，485 拆成485：495；
+d12=((y1-485)./(T-485)).^l;
+plot(y1,d12,'m')
 hold on
-fill ([y11,fliplr(y11)],[d11,fliplr(d21)],'c')
+fill ([y1,fliplr(y1)],[d11,fliplr(d12)],'c')
 hold on
-
-y12=500:0.1:510;
-d11=((510-y12)./(510-500)).^r1;
-plot(y12,d11,'c')
+y0=485:0.1:495;  % 维度不一致，485 拆成485：495；
+d02=((y0-485)./(T-485)).^l;
+d01=((y0-y0)./(T-485)).^l;% d01=0;
+plot(y0, d02,'m')
 hold on
-d21=((510-y12)./(510-500)).^r2;
-plot(y12,d21,'b')
+plot(y0, d01,'b')
 hold on
-fill ([y12,fliplr(y12)],[d11,fliplr(d21)],'c')
+fill ([y0,fliplr(y0)],[d01,fliplr(d02)],'c')
 hold on
 
 % 添加辅助线；
-y=489:0.1:511;
+y=484:0.1:501;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=484:0.1:485;
+m2=0*y+0;
+plot(y,m2,'k')
+y=500:0.1:501;
+m3=0*y+1;
+plot(y,m3,'k')
+hold on
+line([485 485],[0 1]);
+hold on
+line([500 500],[0 1]);
+hold on
+
+subplot(2,3,2)
+y1=495:0.1:500;
+T=500;  l=1; 
+d11=((y1-495)./(T-495)).^l;
+plot(y1,d11,'b')
+hold on
+y1=495:0.1:500;  % 维度不一致，485 拆成485：495；
+d12=((y1-485)./(T-485)).^l;
+plot(y1,d12,'m')
+hold on
+fill ([y1,fliplr(y1)],[d11,fliplr(d12)],'c')
+hold on
+y0=485:0.1:495;  % 维度不一致，485 拆成485：495；
+d02=((y0-485)./(T-485)).^l;
+d01=((y0-y0)./(T-485)).^l;% d01=0;
+plot(y0, d02,'m')
+hold on
+plot(y0, d01,'b')
+hold on
+fill ([y0,fliplr(y0)],[d01,fliplr(d02)],'c')
+hold on
+
+% 添加辅助线；
+y=484:0.1:501;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=484:0.1:485;
+m2=0*y+0;
+plot(y,m2,'k')
+y=500:0.1:501;
+m3=0*y+1;
+plot(y,m3,'k')
+hold on
+line([485 485],[0 1]);
+hold on
+line([500 500],[0 1]);
+hold on
+
+subplot(2,3,3)
+y1=495:0.1:500;
+T=500;  l=0.5; 
+d11=((y1-495)./(T-495)).^l;
+plot(y1,d11,'b')
+hold on
+y1=495:0.1:500;  % 维度不一致，485 拆成485：495；
+d12=((y1-485)./(T-485)).^l;
+plot(y1,d12,'m')
+hold on
+fill ([y1,fliplr(y1)],[d11,fliplr(d12)],'c')
+hold on
+y0=485:0.1:495;  % 维度不一致，485 拆成485：495；
+d02=((y0-485)./(T-485)).^l;
+d01=((y0-y0)./(T-485)).^l;% d01=0;
+plot(y0, d02,'m')
+hold on
+plot(y0, d01,'b')
+hold on
+fill ([y0,fliplr(y0)],[d01,fliplr(d02)],'c')
+hold on
+
+% 添加辅助线；
+y=484:0.1:501;
+m1=0*y+1;
+plot(y,m1,'k')
+hold on
+y=484:0.1:485;
+m2=0*y+0;
+plot(y,m2,'k')
+y=500:0.1:501;
+m3=0*y+1;
+plot(y,m3,'k')
+hold on
+line([485 485],[0 1]);
+hold on
+line([500 500],[0 1]);
+hold on
+
+subplot(2,3,4)
+y11=490:0.1:495;  l=2; 
+d11=((y11-490)./(505-490)).^l;
+plot(y11,d11,'c')
+hold on
+% d21=(y11-490)./(500-490);
+d31=((y11-490)./(495-490)).^l;
+plot(y11,d31,'b')
+hold on
+fill ([y11,fliplr(y11)],[d11,fliplr(d31)],'c')
+hold on
+
+y12=495:0.1:505;
+d11=((y12-490)./(505-490)).^l;
+plot(y12,d11,'c')
+hold on
+% d21=(y11-490)./(500-490);
+d31=exp(0.*y12); % d31=1;
+plot(y12,d31,'b')
+hold on
+fill ([y12,fliplr(y12)],[d11,fliplr(d31)],'c')
+hold on
+
+% 添加辅助线；
+y=489:0.1:506;
 m1=0*y+1;
 plot(y,m1,'k')
 hold on
 y=489:0.1:490;
 m2=0*y+0;
 plot(y,m2,'k')
-y=510:0.1:511;
-m3=0*y+0;
+y=505:0.1:506;
+m3=0*y+1;
 plot(y,m3,'k')
 hold on
 line([490 490],[0 1]);
 hold on
+line([495 495],[0 1]);
+hold on
 line([500 500],[0 1]);
 hold on
-line([510 510],[0 1]);
+line([505 505],[0 1]);
 hold on
 
-subplot(3,1,2)
-
-y11=490:0.1:500; r1=0.5; l1=0.5; r2=5; l2=5; T=500;
-d11=((y11-490)./(500-490)).^l1;
+subplot(2,3,5)
+y11=490:0.1:495; l=1; 
+d11=((y11-490)./(505-490)).^l;
 plot(y11,d11,'c')
 hold on
-d21=((y11-490)./(500-490)).^l2;
-plot(y11,d21,'b')
+% d21=(y11-490)./(500-490);
+d31=((y11-490)./(495-490)).^l;
+plot(y11,d31,'b')
 hold on
-fill ([y11,fliplr(y11)],[d11,fliplr(d21)],'c')
+fill ([y11,fliplr(y11)],[d11,fliplr(d31)],'c')
 hold on
 
-y12=500:0.1:510;
-d11=((510-y12)./(510-500)).^r1;
+y12=495:0.1:505;
+d11=((y12-490)./(505-490)).^l;
 plot(y12,d11,'c')
 hold on
-d21=((510-y12)./(510-500)).^r2;
-plot(y12,d21,'b')
+% d21=(y11-490)./(500-490);
+d31=exp(0.*y12); % d31=1;
+plot(y12,d31,'b')
 hold on
-fill ([y12,fliplr(y12)],[d11,fliplr(d21)],'c')
+fill ([y12,fliplr(y12)],[d11,fliplr(d31)],'c')
 hold on
 
 % 添加辅助线；
-y=489:0.1:511;
+y=489:0.1:506;
 m1=0*y+1;
 plot(y,m1,'k')
 hold on
 y=489:0.1:490;
 m2=0*y+0;
 plot(y,m2,'k')
-y=510:0.1:511;
-m3=0*y+0;
+y=505:0.1:506;
+m3=0*y+1;
 plot(y,m3,'k')
 hold on
 line([490 490],[0 1]);
 hold on
+line([495 495],[0 1]);
+hold on
 line([500 500],[0 1]);
 hold on
-line([510 510],[0 1]);
+line([505 505],[0 1]);
 hold on
 
-subplot(3,1,3)
-y11=490:0.1:500; r1=0.3; l1=0.3; r2=0.8; l2=0.8; T=500;
-d11=((y11-490)./(500-490)).^l1;
+subplot(2,3,6)
+y11=490:0.1:495; l=0.5; 
+d11=((y11-490)./(505-490)).^l;
 plot(y11,d11,'c')
 hold on
-d21=((y11-490)./(500-490)).^l2;
-plot(y11,d21,'b')
+% d21=(y11-490)./(500-490);
+d31=((y11-490)./(495-490)).^l;
+plot(y11,d31,'b')
 hold on
-fill ([y11,fliplr(y11)],[d11,fliplr(d21)],'c')
+fill ([y11,fliplr(y11)],[d11,fliplr(d31)],'c')
 hold on
 
-y12=500:0.1:510;
-d11=((510-y12)./(510-500)).^r1;
+y12=495:0.1:505;
+d11=((y12-490)./(505-490)).^l;
 plot(y12,d11,'c')
 hold on
-d21=((510-y12)./(510-500)).^r2;
-plot(y12,d21,'b')
+% d21=(y11-490)./(500-490);
+d31=exp(0.*y12); % d31=1;
+plot(y12,d31,'b')
 hold on
-fill ([y12,fliplr(y12)],[d11,fliplr(d21)],'c')
+fill ([y12,fliplr(y12)],[d11,fliplr(d31)],'c')
 hold on
 
 % 添加辅助线；
-y=489:0.1:511;
+y=489:0.1:506;
 m1=0*y+1;
 plot(y,m1,'k')
 hold on
 y=489:0.1:490;
 m2=0*y+0;
 plot(y,m2,'k')
-y=510:0.1:511;
-m3=0*y+0;
+y=505:0.1:506;
+m3=0*y+1;
 plot(y,m3,'k')
 hold on
 line([490 490],[0 1]);
 hold on
+line([495 495],[0 1]);
+hold on
 line([500 500],[0 1]);
 hold on
-line([510 510],[0 1]);
+line([505 505],[0 1]);
 hold on
